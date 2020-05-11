@@ -73,6 +73,8 @@ const NumberbaseballHooks = memo(() => {
                 setResult(`${strike}스트라이크, ${ball}볼 입니다.`);
             }
         }
+        inputRef.current.focus();
+
     }
     
     
