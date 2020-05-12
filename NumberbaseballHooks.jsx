@@ -12,6 +12,7 @@ function getNumbers(){
         chosen.push(candidate.splice(Math.floor(Math.random()*(candidate.length)),1)[0]);
     }
 
+    console.log('chsen ', chosen);
     return chosen;
 }
 
@@ -80,20 +81,19 @@ const NumberbaseballHooks = memo(() => {
     
     return (
         <>
-        {console.log(answer)}
-        <h1>{result}</h1>
-        <form onSubmit={onsubmit}>
-            <input type='text' ref={inputRef} maxLength={4} value={inputValue} onChange={onchange} />
-        </form>
-        <div>시도: {tries.length}</div>
-        <ul>
-            {
-                tries.map((d, i)=>{
-                    return <TryHooks key={`${i+1}차 시도 :`} tryInfo={d} />
-                })
-            }
-        </ul>
-    </>
+            <h1>{result}</h1>
+            <form onSubmit={onsubmit}>
+                <input type='text' ref={inputRef} maxLength={4} value={inputValue} onChange={onchange} />
+            </form>
+            <div>시도: {tries.length}</div>
+            <ul>
+                {
+                    tries.map((d, i)=>{
+                        return <TryHooks key={`${i+1}차 시도 :`} tryInfo={d} />
+                    })
+                }
+            </ul>
+        </>
     );
 });
 

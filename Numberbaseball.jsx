@@ -12,7 +12,7 @@ function getNumbers(){
     for(let i=0; i<4; i+=1){
         chosen.push(candidate.splice(Math.floor(Math.random()*(candidate.length)),1)[0]);
     }
-
+    console.log('chsen ', chosen);
     return chosen;
 }
 
@@ -104,7 +104,6 @@ class Numberbaseball extends PureComponent{
     render(){
         return (
             <>
-                {console.log('111 ', this.state.answer)}
                 <h1>{this.state.result}</h1>
                 <form onSubmit={this.onsubmit}>
                     <input type='text' ref={this.inputRef} maxLength={4} value={this.state.inputValue} onChange={this.onchange} />

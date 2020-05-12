@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ResponseResult from './ResponseResult';
 
 class ResponseCheck extends Component{
     state = {
@@ -60,10 +59,10 @@ class ResponseCheck extends Component{
         const {resultTime} = this.state;
 
         // jsx에서 tag가 없다는 것은 null로 표현
-        // return resultTime.length !== 0 ? 
-        // <div>평균시간: {resultTime.reduce((acc, time)=> acc + time)/resultTime.length}ms<button onClick={this.resetOnclick}>리셋</button></div> : null;   
+        return resultTime.length !== 0 ?
+        <><div>평균시간1: {resultTime.reduce((acc, time)=> acc + time)/resultTime.length}ms</div><button onClick={this.resetOnclick}>리셋</button></> : null;   
 
-        return <ResponseResult resultTime={resultTime} resetOnclick={this.resetOnclick} />
+        // return <ResponseResult resultTime={resultTime} resetOnclick={this.resetOnclick} />
     }
 
     render(){

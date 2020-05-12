@@ -9,8 +9,10 @@ const GugudanHooks = require('./GugudanHooks');
 import NumberBaseball from './Numberbaseball';
 import NumberBaseballHooks from './NumberbaseballHooks';
 import ResponseCheck from  './ResponseCheck';
+import ResponseCheckHooks from  './ResponseCheckHooks';
 
-const Hot = hot(ResponseCheck);
+
+const Hot = hot(ResponseCheckHooks);
 
 reactDOM.render(<Hot />, document.querySelector('#root'));
 // reactDOM.render(<WordRelayHooks />, document.querySelector('#root1'));
