@@ -34,14 +34,16 @@ const ResponseCheckHooks = () => {
                 return [...prevResultTime, (endTime.current-startTime.current)];
             });
         }else if(state === 'ready'){
-            clearTimeout(nowSettimeout);
+            clearTimeout(nowSettimeout.current);
             setState('waiting');
             setMessage('성급하시군요. 클릭해서 사용하세요.');            
         }
 
     }
 
-
+    const reset = ()=>{
+        setResultTime([]);
+    }
 
     return (
         <>
@@ -49,7 +51,8 @@ const ResponseCheckHooks = () => {
                 {message}
             </div>
             <div>{resultTime[resultTime.length-1]}ms</div>
-            <ResponseResultHooks resultTime={resultTime} />
+            {resultTime.length !== 0 ? <><ResponseResultHooks resultTime={resultTime} /> <div><button onClick={reset}>reset</button></div></> : null}
+            
         </>
     );
 }

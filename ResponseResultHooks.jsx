@@ -1,22 +1,15 @@
 import React, {memo, useState} from 'react';
 
-const ResponseResultHooks = (props) => {
-    const temp = props.resultTime;
-    const [resultTime, setResultTime] = useState(temp);
+const ResponseResultHooks = memo((props) => {
+    // const [resultTime, setResultTime] = useState(props.resultTime);  //부모의 배열값은 useState로 안됨.
     
-    console.log(props.resultTime);
-    console.log(temp);
-    const resetOnclick = () => {
-        setResultTime([]);
-    }
-
+    
     return (
         <>
-            {resultTime.length !== 0 ? 
-            <><div>평균시간: {resultTime.reduce((acc, time)=> acc + time)/resultTime.length}ms</div><button onClick={resetOnclick}>리셋</button></> : null}   
+            <div>평균시간: {props.resultTime.reduce((acc, time)=> acc + time)/props.resultTime.length}ms</div>
         </>
     );
     
-} 
+}); 
 
 export default ResponseResultHooks;

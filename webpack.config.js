@@ -43,7 +43,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'app2.js',
+        filename: 'app.js',
         publicPath: '/dist'
     }
 }

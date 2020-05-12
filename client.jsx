@@ -10,9 +10,9 @@ import NumberBaseball from './Numberbaseball';
 import NumberBaseballHooks from './NumberbaseballHooks';
 import ResponseCheck from  './ResponseCheck';
 import ResponseCheckHooks from  './ResponseCheckHooks';
+import RSP from './RSP';
 
-
-const Hot = hot(ResponseCheckHooks);
+const Hot = hot(RSP);
 
 reactDOM.render(<Hot />, document.querySelector('#root'));
 // reactDOM.render(<WordRelayHooks />, document.querySelector('#root1'));

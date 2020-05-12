@@ -35,7 +35,7 @@ const NumberbaseballHooks = memo(() => {
         if(inputValue === answer.join('')){
             setResult('홈런');
             setTries((prevTries)=>
-                [...prevTries, {try: inputValue, result: '홈런'}]
+                [...prevTries, {inputValue: inputValue, result: '홈런'}]
             );
 
             alert('게임을 다시 시작 합니다.');
@@ -68,7 +68,7 @@ const NumberbaseballHooks = memo(() => {
                 }
 
                 setTries((prevTries)=>
-                    [...prevTries, {try: inputValue, result: `${strike}스트라이크, ${ball}볼 입니다.`}]
+                    [...prevTries, {inputValue: inputValue, result: `${strike}스트라이크, ${ball}볼 입니다.`}]
                 );
                 setInputValue('');
                 setResult(`${strike}스트라이크, ${ball}볼 입니다.`);
