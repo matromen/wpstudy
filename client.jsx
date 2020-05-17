@@ -11,8 +11,11 @@ import NumberBaseballHooks from './NumberbaseballHooks';
 import ResponseCheck from  './ResponseCheck';
 import ResponseCheckHooks from  './ResponseCheckHooks';
 import RSP from './RSP';
+import RSPHooks from  './RSPHooks';
+import Lotto from './Lotto';
+import LottoHooks from './LottoHooks';
 
-const Hot = hot(RSP);
+const Hot = hot(LottoHooks);
 
 reactDOM.render(<Hot />, document.querySelector('#root'));
 // reactDOM.render(<WordRelayHooks />, document.querySelector('#root1'));

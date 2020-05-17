@@ -20,7 +20,7 @@ class RSP extends Component{
         super(props);
 
         this.state = {
-            imgCoord: 0,
+            imgCoord: rspCoords.바위,
             result: '',
             score: 0
         }
@@ -45,7 +45,10 @@ class RSP extends Component{
             })
         }
     }
-
+    /// componentDidMount() 대신에 수동으로 시작할수 있음
+    // start = () => {
+    //     this.interval = setInterval(this.changeHand,2000);
+    // }
     componentDidMount(){  //컴포넌트가 처음 랜더링 후, 여기에 비동기 요청을 많이 함.
         this.interval = setInterval(this.changeHand,100);
     }
@@ -94,7 +97,7 @@ class RSP extends Component{
             )          
         }
 
-        setTimeout(()=>{this.interval = setInterval(this.changeHand,100)}
+        setTimeout(()=>{this.interval = setInterval(this.changeHand,2000)}
         ,2000);
     }
 
@@ -106,6 +109,7 @@ class RSP extends Component{
                 <div id='computer' style={{width:'142px', height:'200px', background: `url(https://en.pimg.jp/023/182/267/1/23182267.jpg) ${imgCoord} 0`}} />
                 <div>
                     {/* <button id='rock' className='btn' onClick={()=>this.onClickBtn('바위')}>바위</button> */}
+                    {/* <button onClick={this.start}>start</button> */}
                     <button id='rock' className='btn' onClick={this.onClickBtn('바위')}>바위</button>
                     <button id='scissor' className='btn' onClick={this.onClickBtn('가위')}>가위</button>
                     <button id='paper' className='btn' onClick={this.onClickBtn('보')}>보</button>
