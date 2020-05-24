@@ -1,16 +1,15 @@
-import React, { useCallback, useRef, useEffect } from 'react';
+import React, { useCallback, useRef, useEffect, memo } from 'react';
 import {CLICK_CELL } from  './Tictactoe';
 
 
 const Td = ({rowIndex, colIndex, dispatch, colData}) => {
     const ref = useRef([]);
 
-    console.log('td renderring ' +  ref.current[0])
+    console.log('td renderring ')
 
 
     useEffect(() => {
-        // console.log(rowIndex, colIndex, dispatch, colData)
-        // console.log(ref.current);
+        console.log(rowIndex, colIndex, colData)
         console.log(rowIndex === ref.current[0], colIndex === ref.current[1], dispatch === ref.current[2], colData === ref.current[3])
         ref.current = [rowIndex, colIndex, dispatch, colData];
 
@@ -19,8 +18,6 @@ const Td = ({rowIndex, colIndex, dispatch, colData}) => {
 
 
     const onClickTd = useCallback(() => {  //rerendering 시 재생성 막기. 힘수 기억
-        // console.log(rowIndex, colIndex);
-        // console.log(colData)
         if(colData){
             console.log('s나와1');
             return;
@@ -37,6 +34,6 @@ const Td = ({rowIndex, colIndex, dispatch, colData}) => {
             <td onClick={onClickTd}>{colData}</td>
         </>
     );
-}
+};
 
 export default Td;

@@ -50,7 +50,7 @@ const LottoHooks = () => {
     useEffect(() => {
         console.log('useEffect');
         secondInit();
-
+        console.log('useEffect2');
         return () => {
             setTimes.current.forEach( (d) => clearTimeout(d));
         }
@@ -63,8 +63,8 @@ const LottoHooks = () => {
         setBonusBall(null);             //이럴때는 useCallback을 사용하여 부모의 rerendering시 함수의 재생성을 막는다.
         setRedo(false);                 //자식이 <BonusBall onClick={reload} ball={bonusBall} /> 경우
         setTimes.current = [];
-    }, []);
-    // }, [winNumbers]);    // state요소를 2번째 안자에 넣어 값 변경시 해당 함수전체를 새로운 함수로 간주하고 재 인식함.
+    // }, []);
+    }, [winNumbers]);    // state요소를 2번째 안자에 넣어 값 변경시 해당 함수전체를 새로운 함수로 간주하고 재 인식함.
                             // []이나, 값의 변화가 없다면 해당 함수를 기 인식 시점에 머물러 있음.
     return (
         <>
